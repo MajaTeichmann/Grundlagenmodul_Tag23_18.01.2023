@@ -25,6 +25,4 @@ Schreibe hier deine Antwort hin.
  -> wenn diese Bedingung ebenfalls NICHT nicht zutrifft, soll stattdessen geprüft werden, ob der abgefragte Index gleich 120 ist.
  trifft dies zu, soll "auf der " + (Indexposition) + ". Strasse kann man " + 120 "km/h fahren." in der Konsole ausgegeben werden.
  -> trifft das immernoch NICHT zu, bleibt die Konsole in dieser Runde leer.
-
-
  */

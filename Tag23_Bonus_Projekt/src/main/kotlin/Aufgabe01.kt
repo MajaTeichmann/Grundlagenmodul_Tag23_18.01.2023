@@ -45,13 +45,41 @@ fun main() {
             |Wähle ein Bild:
             |${museum.keys}""".trimMargin())
         bildStehlen = readln()
+        raubzug()
+    }
+}
+
+fun raubzug(){
+    if(!polizeiVerdacht in 0..25){
         if(museum.keys.contains(bildStehlen)){
             beutel.put(bildStehlen,museum.getValue(bildStehlen))
             museum.remove(bildStehlen)
             println(beutel)
             println(museum)
             var beutelGesamtWert = beutel.values.toString()
-            println("Gesamtwert der Beute: ${beutelGesamtWert}€")
+            println("Du konntest erfolgreich das Gemälde ${bildStehlen} stehlen!")
+            println("""
+                    Was möchtest du als nächstes tun?
+                    1 für weiter Gemälde stehlen
+                    2 um den aktuellen Gesamtwert deiner Beute im Beutel zu sehen
+                    3 um den Raubzug zu beenden""".trimIndent())
+            var auswahl = readln()
+            if(auswahl == "1"){
+                println("Du möchtest also weiterhin auf Beutezug gehen. Bleib wachsam!")
+            }
+            else if(auswahl == "2"){
+                beute()
+            }
+            else if(auswahl == "3"){
+                println("Dein Raubzug wird beendet! Du hast insgesamt ${beutelGesamtWert}€ erbeuten können!")
+                break
+            }
         }
-    }
+    } else(println("Du wurdest gefasst!")
+            println("Dein Raubzug wird beendet! Du hast insgesamt ${beutelGesamtWert}€ erbeuten können!")
+    )
+}
+
+fun beute(){
+    println("Gesamtwert der Beute: ${beutelGesamtWert}€") //da ist noch ein Fehler
 }
